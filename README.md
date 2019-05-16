@@ -25,9 +25,9 @@ Step 2.  Add dependency and Sync
 
 Step 3. Declare and Initialize and use requestPermission method in activity oncreate in which you want to use it.
 
- FileUtils fileUtils;
+
  
- 
+        FileUtils fileUtils;
         fileUtils = new FileUtils(this);
         fileUtils.requestPermission();
 
