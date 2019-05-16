@@ -21,7 +21,7 @@ Step 1.  Add maven in allprojects Project level build.gradle file.
 
 Step 2.  Add dependency and Sync
 
-    implementation 'com.github.KrupeshDobariya:imgpicker:0.1.1'
+    implementation 'com.github.KrupeshDobariya:imgpicker:0.1.2'
 
 
 Step 3. Declare and Initialize and use requestPermission method in activity oncreate in which you want to use it.
