@@ -9,14 +9,15 @@ You can use Camera and take and get image with correct rotation.
 To use this library,
 
 Step 1.  Add maven in allprojects Project level build.gradle file.
-allprojects {
+
+    allprojects {
     repositories {
     .
     .
     .
     maven { url 'https://jitpack.io' }
     }
-}
+    }
 
 Step 2.  Add dependency and Sync
 
@@ -32,10 +33,15 @@ Step 3. Declare and Initialize and use requestPermission method in activity oncr
         fileUtils.requestPermission();
 
 Step 4.
-  fileUtils.deviceImagesRequest();  // This method will open Images from your device
+          
+          fileUtils.deviceImagesRequest();  
+         
+         
+   // This method will open Images from your device
       
 Step 5.
-        try {
+            
+            try {
             fileUtils.cameraRequest();  // This method will open Camera from your device
             } catch (IOException e) {
                e.printStackTrace();
