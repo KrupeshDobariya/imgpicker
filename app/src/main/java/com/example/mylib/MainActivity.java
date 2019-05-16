@@ -1,18 +1,9 @@
 package com.example.mylib;
-import android.Manifest;
 import android.app.Activity;
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,9 +12,7 @@ import android.widget.ImageView;
 import com.example.imgpicker.FileUtils;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -102,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK) {
-            fileUtils.onPickImageActivityResult(img,data,imgFile);
+            fileUtils.onPickImageActivityResult(img,data);
         } else if (resultCode == RESULT_OK && requestCode == CAMERA_REQUEST) {
             try {
                 fileUtils.onCameraActivityResult(img);

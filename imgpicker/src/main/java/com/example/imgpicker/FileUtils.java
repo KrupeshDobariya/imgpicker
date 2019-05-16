@@ -119,7 +119,7 @@ public class FileUtils extends FileProvider {
     }
 
 
-    public void onPickImageActivityResult(ImageView img, Intent data, File imgFile){
+    public void onPickImageActivityResult(ImageView img, Intent data){
         //TODO: action
 
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -128,7 +128,7 @@ public class FileUtils extends FileProvider {
 
         Log.e("URI", imageUri + "");
 
-        imgFile = new File(FileUtils.getPath(context, imageUri));
+        File imgFile = new File(FileUtils.getPath(context, imageUri));
         Log.e("IMG", imgFile + "");
 
         Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getPath(),
