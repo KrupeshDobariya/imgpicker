@@ -55,14 +55,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         img = findViewById(R.id.img);
         btn.setOnClickListener(this);
         btn2.setOnClickListener(this);
-        requestPermission();
 
 
-     fileUtils = new FileUtils(this);
+        fileUtils = new FileUtils(this);
+
+
+        fileUtils.requestPermission();
 
 
     }
 
+/*
 
     public static void addImageToGallery(final String filePath, final Context context) {
 
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.e("SAVING", "YES");
     }
+*/
 
 
     @Override
@@ -118,19 +122,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private static final int REQUEST_WRITE_PERMISSION = 786;
+   /* private static final int REQUEST_WRITE_PERMISSION = 786;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == REQUEST_WRITE_PERMISSION && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-          //  openFilePicker();
+
         }
         if (requestCode == CAMERA_REQUEST && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-          //  String pathToInternallyStoredImage = CameraUtils.saveToInternalStorage(this, imageUri);
-            // Load the bitmap from the path and display it somewhere, or whatever
 
-            //  openFilePicker();
         }
     }
 
@@ -140,8 +141,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
          //   openFilePicker();
         }
-    }
+    }*/
 
+/*
 
 
     private void addToGallery() {
@@ -212,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+*/
 
 
 

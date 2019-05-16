@@ -1,5 +1,6 @@
 package com.example.imgpicker;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
@@ -23,6 +24,12 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,6 +37,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 
 public class FileUtils extends FileProvider {
@@ -59,6 +67,21 @@ public class FileUtils extends FileProvider {
         this.activity = (Activity) context;
     }
 
+    public void requestPermission(){
+
+
+        Dexter.withActivity(activity)
+                .withPermissions(
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                ).withListener(new MultiplePermissionsListener() {
+            @Override public void onPermissionsChecked(MultiplePermissionsReport report) {/* ... */}
+            @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {/* ... */}
+        }).check();
+    }
+
+
 
     public void cameraRequest() throws IOException {
 
@@ -77,6 +100,8 @@ public class FileUtils extends FileProvider {
         activity.startActivityForResult(intent,
                 CAMERA_REQUEST);
     }
+
+
 
 
 
